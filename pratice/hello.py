@@ -1,82 +1,92 @@
 
-# lets try java style import class from a different file.
-# lets go! works like magic ~
-import Beginner_training
-
-# my practice oop before
-class vehicle():
+# getter setter in java. rock and roll
+class human():
     
+    #empty constructor in java. 
     def __init__(self) -> None:
-        print("i am a vehicle")
+        self.__name=None
+        self.__age=None
+        self.__race=None
+        self.__zombie=None
 
-
-    def i_am(self):
-        print("i am parent class vehicle")
-
-
-class car(vehicle):
+    def set_name(self, name):
+        self.__name = name
     
-    def i_am(self):
-        print("i am a car.")
+    def set_age(self, age):
+        self.__age = age
 
-class boat(vehicle):
+    def set_race(self, race):
+        self.__race = race
+
+    def set_zombie(self, zombie):
+        self.__zombie = zombie
+
+    def get_name(self):
+        return self.__name
     
-    def i_am(self):
-        print("i am a boat.")
-
-
-class airplane(vehicle):
+    def get_age(self):
+        return self.__age
     
-    def i_am(self):
-        print("i am a plane.")
+    def get_race(self):
+        return self.__race
+    
+    def get_zombie(self):
+        return self.__zombie
 
 
-#sam = {1,1,2,4,5}
-#names = ("francis","francis", "dequito", "software", "engineer");
-#print(sam)
-#print(type(sam))
-#print(names)
-#print(type(names))
-#print("")
-#car().i_am()
-#boat().i_am()
-#airplane().i_am()
-#vehicle().i_am()
+guy = human()
+guy.set_name("francis")
+guy.set_age(28)
+guy.set_race("noypi")
+guy.set_zombie(False)
 
-#names = ['francis','dequito']
-#name_set = {'francis','francis'}
-#name_tupple = ('francis','francis')
-#print(type(names))
-#print(type(name_set))
-#print(type(name_tupple))
-
-a = Beginner_training
-# b = a.person(name="Francis Earl b. dequito",occupation="Rock and Roll Music! Programmer Trainee lets go!!")
-# print(b.sup_bro())
-# print(b.job())
-
-# print("")
-
-# c = a.generate()
-# print("Generated random numbers: ",c.gen_numbers())
-# print(c.pie()+10)
-# print("Pythagorean theorem: ",c.Pythagorean(sideA=12.15, sideB=44.15))
+print(guy.get_name(), guy.get_age(), guy.get_race(), guy.get_zombie())
 
 
-d = a.generate()
+# *args
+def add(*args):
+    total = 0
+    for i in args:
+        total = total+i
+    return total
 
-alist = [1,2,3,4,1]
-atupple = (1,2,3,4,1)
-aset = {1,2,3,4,1}
-rdictionary = {
-    "name":"francis",
-    "lastname":"dequito"
-}
-sample = [n for n in range(1, 11)]
-print(sample)
-print(list(map(lambda x: x % 2 == 1, sample)))
 
-# print(d.give_array(rdictionary))
-# print(d.give_array(rdictionary)['name'])
+def pets(*args):
+    fav = ""
+    for i in args:
+        fav +=f"i love {i} \n"
+    return fav
+
+print(add(10,10,30))
+print(pets("memengcat","bnoykey", "sneepy"))
+
+
+# **kwargs
+def lunch(**onegai):
+    for k, v in onegai.items():
+        print(k, v)
+
+lunch(ulam="pork steak", drinks="coke mismo", rice=2)
+
+
+
+# random drop item from a boss monster MMORPG
+import random
+
+character_class = "Wizard"
+relic = ["invisibility cloak", "dagger of escape", "ring of health"]
+rare_weapon = ["epic sword", "epic bow", "epic blade", "epic staff"]
+not_rare_item = ["silver cup","plate","coins","boots","dirty rug"]
+
+boss_drop_relic = random.choice(relic)
+boss_drop_weapon = random.choice(rare_weapon)
+boss_drop_item = random.choice(not_rare_item)
+
+loot = []
+loot.append(boss_drop_relic)
+loot.append(boss_drop_weapon)
+loot.append(boss_drop_item)
+print(loot)
+
 
 

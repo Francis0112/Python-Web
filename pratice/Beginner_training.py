@@ -2,28 +2,29 @@
 import math
 import random
 
+
 # Recall Python. Warming up.
 # OOP Python for fun! rock and roll music
 # this is main class! 
 class main():
 	#OOP Constructor
 	def __init__(self):
-		print("i am MAIN CLASS, the PARENT class")
+		print("Good Bye! :)")
 
 	#polymorph
-	def hold():
-		return "overide this method. please? onegai?"
+	def hold(self):
+		return "overide this method. please? onegai shimus?" 
 
 class living(main):
 	def __init__(self,  species, pet_name, domesticated=False, extinct=False) -> None:
-		print("This is the living class")
+		print("This is the living class!")
 		self.species=species
 		self.pet_name=pet_name
 		self.domesticated=domesticated
 		self.extinct=extinct
 
 	#polymorph
-	def hold():
+	def hold(self):
 		return "The Living have overide this method. please? onegai?"
 
 class undead(main):
@@ -33,7 +34,7 @@ class undead(main):
 		print("This is the Undead class!")
 
 	#polymorph
-	def hold():
+	def hold(self):
 		return "The Undead have overide method. please? onegai?"
 
 
@@ -42,7 +43,7 @@ class mecha(main):
 		print("I am a Gundam! This is mecha class!")
 
 	#polymorph
-	def hold():
+	def hold(self):
 		return "The Mecha have overide method. please? onegai?"
 
 
@@ -65,7 +66,7 @@ class pets(living):
 # sorry i do this code for anti boringness pang pa tanggal ng umay po hehe. onegai
 class person(undead):
 	
-	def sup_bro(self):
+	def say_name(self):
 		return f"wassup {self.name}!"
 
 	def job(self):
@@ -74,52 +75,26 @@ class person(undead):
 # extrend class robots! gundams seed voltes 5 optimum pride oha a a a a a
 class generate(mecha):
 
+	mecha_version = 3.0
+
 	def gen_numbers(self):
 		temp = []
 		for i in range(6):
 			temp.append(random.randrange(start=1,stop=100))
 		return temp
 
-	def pie(self):
-		return math.pi
+	def upgrade(self):
+		self.mecha_version = self.mecha_version+1.0
+		return self.mecha_version
 
-	def Pythagorean(self, sideA, sideB):
-		return round(math.sqrt(sideA**2+sideB**2))
+	def pythagorean(self, sideA, sideB):
+		return math.sqrt(sideA**2+sideB**2)
 
-
-	def give_array(self, arr):
-		return arr
-
-
-# guy1 = person("francis", "software developer")
-# print(guy1.sup_bro())
-# print(guy1.job())
-# print(guy1.hold())
-
-# print("")
-
-# pet1 = pets(species="dog", pet_name="bork", domesticated=True, extinct=False)
-# print(pet1.pet_species())
-# print(pet1.name_pet())
-# print(pet1.pet_domesticated())
-# print(pet1.pet_extinct())
-# print(pet1.hold())
-
-# print("")
-
-# print(main.hold())
-
-# print("")
-
-# num = generate()
-# print(num.gen_numbers())
-
-
-if __name__ == '__main__':
-	main()
-
-
-
+	def predict_year(self, user_age):
+		import datetime
+		present_year = datetime.datetime.now().year
+		present_year = present_year-user_age
+		return present_year
 
 
 		
