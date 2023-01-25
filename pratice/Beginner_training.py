@@ -13,7 +13,7 @@ class main():
 
 	#polymorph
 	def hold(self):
-		return "overide this method. please? onegai shimus?" 
+		return "overide this method. please? onegai?" 
 
 class living(main):
 	def __init__(self,  species, pet_name, domesticated=False, extinct=False) -> None:
@@ -67,7 +67,7 @@ class pets(living):
 class person(undead):
 	
 	def say_name(self):
-		return f"wassup {self.name}!"
+		return f"Hello {self.name}!"
 
 	def job(self):
 		return f"you are a {self.occupation}"
@@ -93,8 +93,5 @@ class generate(mecha):
 	def predict_year(self, user_age):
 		import datetime
 		present_year = datetime.datetime.now().year
-		present_year = present_year-user_age
+		present_year = present_year-user_age-1
 		return present_year
-
-
-		

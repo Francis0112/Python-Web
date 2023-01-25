@@ -1,6 +1,5 @@
 from Beginner_training import *
 
-
 animal1 = pets(pet_name="godzilla", species="kaiju", domesticated=True, extinct=False)
 print(animal1.hold())
 
@@ -22,7 +21,6 @@ side1 = int(input("Enter Side A:"))
 side2 = int(input("Enter Side B:"))
 print(f"pythagorean: Side C: {robot1.pythagorean(sideA=side1, sideB=side2)}")
 print("END")
-
 
 if __name__ == "__main__":
     main()

@@ -33,7 +33,6 @@ class human():
     def get_zombie(self):
         return self.__zombie
 
-
 guy = human()
 guy.set_name("francis")
 guy.set_age(28)
