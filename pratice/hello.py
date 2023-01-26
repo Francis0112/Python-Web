@@ -53,28 +53,26 @@ def add(*args):
 def pets(*args):
     fav = ""
     for i in args:
-        fav +=f"i love {i} \n"
+        fav +=f"hello konichiwa {i} \n"
     return fav
 
 print(add(10,10,30))
-print(pets("memengcat","bnoykey", "sneepy"))
+print(pets("cat","doggie", "kon"))
 
 
 # **kwargs
 def lunch(**onegai):
     for k, v in onegai.items():
-        print(k, v)
+        print(f"{k}: {v}")
 
-lunch(ulam="pork steak", drinks="coke mismo", rice=2)
-
-
+lunch(ulam="lawson pork steak", drinks="coke mismo", rice=2)
 
 # random drop item from a boss monster MMORPG
 import random
 
 character_class = "Wizard"
-relic = ["invisibility cloak", "dagger of escape", "ring of health"]
-rare_weapon = ["epic sword", "epic bow", "epic blade", "epic staff"]
+relic = ["invisibility cloak", "dagger of escape", "ring of health", None]
+rare_weapon = ["epic sword", "epic bow", "epic blade", "epic staff", None]
 not_rare_item = ["silver cup","plate","coins","boots","dirty rug"]
 
 boss_drop_relic = random.choice(relic)
@@ -86,6 +84,3 @@ loot.append(boss_drop_relic)
 loot.append(boss_drop_weapon)
 loot.append(boss_drop_item)
 print(loot)
-
-
-

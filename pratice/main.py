@@ -3,8 +3,8 @@ from Beginner_training import *
 animal1 = pets(pet_name="godzilla", species="kaiju", domesticated=True, extinct=False)
 print(animal1.hold())
 
-person1 = person(name="francis", occupation="write none sense code")
-print(person1.hold())
+creature1 = creature(name="golumn", bloodline="my precious")
+print(creature1.hold())
 
 robot1 = generate()
 print(robot1.hold())

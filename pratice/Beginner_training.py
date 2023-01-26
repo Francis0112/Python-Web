@@ -1,6 +1,7 @@
 
 import math
 import random
+import datetime
 
 
 # Recall Python. Warming up.
@@ -16,7 +17,7 @@ class main():
 		return "overide this method. please? onegai?" 
 
 class living(main):
-	def __init__(self,  species, pet_name, domesticated=False, extinct=False) -> None:
+	def __init__(self, species, pet_name, domesticated=False, extinct=False) -> None:
 		print("This is the living class!")
 		self.species=species
 		self.pet_name=pet_name
@@ -28,9 +29,9 @@ class living(main):
 		return "The Living have overide this method. please? onegai?"
 
 class undead(main):
-	def __init__(self, name, occupation) -> None:
+	def __init__(self, name, bloodline) -> None:
 		self.name=name
-		self.occupation=occupation
+		self.bloodline=bloodline
 		print("This is the Undead class!")
 
 	#polymorph
@@ -64,13 +65,13 @@ class pets(living):
 
 # extends undead class zombie 
 # sorry i do this code for anti boringness pang pa tanggal ng umay po hehe. onegai
-class person(undead):
+class creature(undead):
 	
-	def say_name(self):
+	def m_name(self):
 		return f"Hello {self.name}!"
 
-	def job(self):
-		return f"you are a {self.occupation}"
+	def blood_type(self):
+		return f"Type: {self.occupation}"
 	
 # extrend class robots! gundams seed voltes 5 optimum pride oha a a a a a
 class generate(mecha):
@@ -91,7 +92,7 @@ class generate(mecha):
 		return math.sqrt(sideA**2+sideB**2)
 
 	def predict_year(self, user_age):
-		import datetime
 		present_year = datetime.datetime.now().year
 		present_year = present_year-user_age-1
 		return present_year
+	
