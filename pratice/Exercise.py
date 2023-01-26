@@ -1,5 +1,4 @@
 
-# lets go
 
 # return product if result < 1000 else return sum
 def two_number(a, b):
@@ -110,9 +109,10 @@ def multi_table():
 #multi_table()
 
 #power base
-def super_power(base, exp):
+def _power(base, exp):
     import math
     c = math.pow(base, exp)
     return c
 
-print(super_power(2, 5))
+print(_power(2, 5))
+

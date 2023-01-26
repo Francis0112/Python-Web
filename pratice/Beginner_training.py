@@ -5,7 +5,6 @@ import datetime
 
 
 # Recall Python. Warming up.
-# OOP Python for fun! rock and roll music
 # this is main class! 
 class main():
 	#OOP Constructor
@@ -14,7 +13,7 @@ class main():
 
 	#polymorph
 	def hold(self):
-		return "overide this method. please? onegai?" 
+		return "overide this method." 
 
 class living(main):
 	def __init__(self, species, pet_name, domesticated=False, extinct=False) -> None:
@@ -26,7 +25,7 @@ class living(main):
 
 	#polymorph
 	def hold(self):
-		return "The Living have overide this method. please? onegai?"
+		return "The Living have overide this method."
 
 class undead(main):
 	def __init__(self, name, bloodline) -> None:
@@ -36,7 +35,7 @@ class undead(main):
 
 	#polymorph
 	def hold(self):
-		return "The Undead have overide method. please? onegai?"
+		return "The Undead have overide method."
 
 
 class mecha(main):
@@ -45,10 +44,10 @@ class mecha(main):
 
 	#polymorph
 	def hold(self):
-		return "The Mecha have overide method. please? onegai?"
+		return "The Mecha have overide method."
 
 
-# some extra class that extends living class.. oh yea lets go JAVA
+#inherit
 class pets(living):
 	def pet_species(self):
 		return f"species: {self.species}"
@@ -63,8 +62,7 @@ class pets(living):
 		return f"extinct: {self.extinct}"
 	
 
-# extends undead class zombie 
-# sorry i do this code for anti boringness pang pa tanggal ng umay po hehe. onegai
+# extends undead class creature
 class creature(undead):
 	
 	def m_name(self):
@@ -73,7 +71,7 @@ class creature(undead):
 	def blood_type(self):
 		return f"Type: {self.occupation}"
 	
-# extrend class robots! gundams seed voltes 5 optimum pride oha a a a a a
+# extend class robots gundams 
 class generate(mecha):
 
 	mecha_version = 3.0

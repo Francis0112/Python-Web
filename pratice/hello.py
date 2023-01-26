@@ -1,45 +1,52 @@
 
 # getter setter in java. rock and roll
-class human():
+class character():
     
     #empty constructor in java. 
     def __init__(self) -> None:
         self.__name=None
-        self.__age=None
         self.__race=None
-        self.__zombie=None
+        self.__weapon=None
+        self.__combat=None
 
     def set_name(self, name):
         self.__name = name
     
-    def set_age(self, age):
-        self.__age = age
-
     def set_race(self, race):
         self.__race = race
 
-    def set_zombie(self, zombie):
-        self.__zombie = zombie
+    def set_weapon(self, weapon):
+        self.__weapon = weapon
+
+    def set_combat(self, combat):
+        self.__combat = combat
 
     def get_name(self):
         return self.__name
     
-    def get_age(self):
-        return self.__age
-    
     def get_race(self):
         return self.__race
     
-    def get_zombie(self):
-        return self.__zombie
+    def get_weapon(self):
+        return self.__weapon
+    
+    def get_combat(self):
+        return self.__combat
 
-guy = human()
-guy.set_name("francis")
-guy.set_age(28)
-guy.set_race("noypi")
-guy.set_zombie(False)
 
-print(guy.get_name(), guy.get_age(), guy.get_race(), guy.get_zombie())
+char1 = character()
+char1.set_name("player1")
+char1.set_race("tank")
+char1.set_weapon("hammer")
+char1.set_combat("mellee")
+print(char1.get_name(), char1.get_race(), char1.get_weapon(), char1.get_combat())
+
+char2 = character()
+char2.set_name("player2")
+char2.set_race("mage")
+char2.set_weapon("wand")
+char2.set_combat("range")
+print(char2.get_name(), char2.get_race(), char2.get_weapon(), char2.get_combat())
 
 
 # *args
@@ -57,7 +64,7 @@ def pets(*args):
     return fav
 
 print(add(10,10,30))
-print(pets("cat","doggie", "kon"))
+print(pets("cat","doggie", "bird"))
 
 
 # **kwargs
@@ -65,7 +72,7 @@ def lunch(**onegai):
     for k, v in onegai.items():
         print(f"{k}: {v}")
 
-lunch(ulam="lawson pork steak", drinks="coke mismo", rice=2)
+lunch(ulam="lawson pork steak", rice=2, drinks="coke mismo")
 
 # random drop item from a boss monster MMORPG
 import random
