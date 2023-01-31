@@ -1,6 +1,9 @@
 
 
 # day 2
+# day 3
+# loop exercise
+
 def loop():
     for i in range(1,10+1):
         print(i)
@@ -116,4 +119,28 @@ def ice_cube():
     for i in range(1,5+1):
         print(f"current number: {i} cube number: {i*i*i}")
 # ice_cube()
+
+def series(n):
+    total = 0
+    st = "2"
+    given = 2
+    for i in range(0,n):
+        print(st, end="+")
+        st+=str(given)
+        total+=int(st)
+    print("\nsum: %d" %total)
+# series(5)
+
+def flag():
+    for i in range(0,5,1):
+        for x in range(i):
+            print("*", end="")
+        print("")
+    for i in range(5,-1,-1):
+        for x in range(i):
+            print("*", end="")
+        print("")
+# flag()
+
+
 
