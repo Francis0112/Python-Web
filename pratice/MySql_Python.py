@@ -1,9 +1,9 @@
 
 
 # day 7 Database Exercise
-# i will do it java style with classes and objects, returned method and parameterized crud style 
+# i will do it java style with classes and objects, returned method and parameterized crud methods
 # Crud Operation
-# this is a recall on python database integration during my old days way back before when i was using sqlite3 for python. now i am trying Mysql
+# Recap 
 
 import mysql.connector
 from mysql.connector import Error
