@@ -7,6 +7,9 @@ from django.http import HttpResponse
 def wakaru(request):
     return render(request=request, template_name="index.html")
 
+def about(request):
+    return render(request, "about.html")
+
 def hello(request):
     print(request.user)
     return HttpResponse("hi francis dequito")
