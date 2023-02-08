@@ -12,3 +12,7 @@ def hackerman(request):
 def login(request):
     return render(request, 'index.html', {'name':'francis'}) 
 
+def add(request):
+    n = [i for i in range(1,10+1)]
+    return HttpResponse(n)
+

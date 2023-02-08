@@ -10,7 +10,7 @@ def bits16(n):
     return res
 
 def hex32(n):
-    res = secrets.token_hex(n)
+    res = secrets.token_hex(n) 
     return res
 
 def meth():
