@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import smtplib
 
 
 # Create your views here.
@@ -9,6 +8,7 @@ def wakaru(request):
     return render(request=request, template_name="index.html")
 
 def hello(request):
+    print(request.user)
     return HttpResponse("hi francis dequito")
 
 def send(request):
