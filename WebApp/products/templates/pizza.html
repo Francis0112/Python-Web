@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>pizza</p>
+<p>{{ name }}</p>
+<h4>Pets List:</h4>
+<ul>
+	{% for i in pets %}
+		{% if "memengcat" in i %}
+		    <li>{{ forloop.counter }} - {{ i|add:" CAT" }}</li>
+		{% else %}
+			<li>{{ forloop.counter }} - {{ i }}</li>
+		{% endif %}
+	{% endfor %}
+</ul>
+
+{{ other_name }}
+<br>
+{{ fav_pet }}
+
+{% endblock  %}
