@@ -1,4 +1,3 @@
-
 from django import forms
 from .models import Products
 from .models import Cars
@@ -24,4 +23,4 @@ class CarsForms(forms.ModelForm):
 		    "mileage",
 		    "owner",
 		    "active"
-		]
+		]	

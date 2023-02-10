@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from . models import Products
 from . models import Cars
 from . forms import ProductsForms
@@ -8,11 +8,20 @@ from . forms import CarsForms
 
 # Create your views here.
 def wakaru(request):
-    return render(request=request, template_name="index.html")
+    res = {
+        "name":"francis dequito"
+    }
+    return render(request, "index.html", res)
 
 
 def about(request):
-    return render(request, "about.html")
+    res  ={
+        "about":"This Django Web App is created by Francis Dequito as part of his Portfolio.",
+        "goal":"WORK AT NASA",
+        "objective":"FIND ALIENS",
+        "mission":"FIND habitable exoplanets like earth. sorry i do this at work. :)"
+    }
+    return render(request, "about.html", res)
 
 
 def hello(request):
@@ -44,16 +53,35 @@ def pizza(request):
     return render(request, "pizza.html", res)
 
 
-def view_product_details(request):
-    item = Products.objects.get(id=2)
-    res = {
+def view_product_details(request, prod_id):
+    try:
+        item = Products.objects.get(id=prod_id)
+        res = {
         "name":item.name,
         "price":item.price,
         "desc":item.desc,
         "avail":item.avail,
         "summary":item.summary
-    }
+        }
+    except Products.DoesNotExist:
+        raise Http404
     return render(request, "product/item_details.html", res)
+
+
+def view_car_details(request, car_id):
+    try:
+        item = Cars.objects.get(id=car_id)
+        res = {
+        "brand":item.brand,
+        "drive":item.drive,
+        "fuel":item.fuel,
+        "mileage":item.mileage,
+        "owner":item.owner,
+        "active":item.active
+        }
+    except Cars.DoesNotExist:
+        raise Http404
+    return render(request, "car_details.html", res)
 
 
 def add_product(request):
@@ -67,7 +95,6 @@ def add_product(request):
     return render(request, "product/item_add.html", res)
 
 
-
 def add_cars(request):
     form = CarsForms(request.POST or None)
     if form.is_valid():
@@ -79,8 +106,22 @@ def add_cars(request):
     return render(request, "add_cars.html", res)
 
 
-
 def search(request):
     print(request.get["title"])
     print(request.POST)
     return render(request, "search.html", {})
+
+
+def display_products(request):
+    item = Products.objects.all()
+    res= {
+        "items":item
+    }
+    return render(request, "product_list.html", res)
+
+def display_cars(request):
+    item = Cars.objects.all()
+    res = {
+        "items":item
+    }
+    return render(request, "car_list.html", res)

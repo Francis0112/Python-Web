@@ -1,0 +1,9 @@
+{% extends "bork.html" %}
+
+{% block content %}
+    {% comment %} {{ items }} {% endcomment %}
+    <h3>Products:</h3>
+    {% for i in items %}
+        <p>{{ i.name }} - {{ i.desc }} - {{ i.price }} - {{ i.avail }} - {{ i.summery }}</p>
+    {% endfor %}
+{% endblock content %}
