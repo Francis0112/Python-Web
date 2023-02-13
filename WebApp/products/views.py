@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, Http404
 from . models import Products
 from . models import Cars
@@ -104,6 +104,33 @@ def add_cars(request):
         "form":form
     }
     return render(request, "add_cars.html", res)
+
+
+def delete_product(request, prod_id):
+    obj = get_object_or_404(Products, id=prod_id)
+    if request.method == "POST":
+        obj.delete()
+        return redirect(msg)
+    res = {
+        "obj":obj
+    }
+    return render(request, "delete_product.html", res)
+
+def delete_car(request, car_id):
+    obj = get_object_or_404(Cars, id=car_id)
+    if request.method == "POST":
+        obj.delete()
+        return redirect(msg)
+    res = {
+        "obj":obj
+    }
+    return render(request, "delete_cars.html", res)
+
+def msg(request):
+    res = {
+        "msg":"item have been deleted!"
+    }
+    return render(request, "product/message.html", res)
 
 
 def search(request):

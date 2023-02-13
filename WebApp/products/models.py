@@ -17,3 +17,4 @@ class Cars(models.Model):
     mileage = models.CharField(max_length=120)
     owner = models.CharField(max_length=120)
     active = models.BooleanField(default=False)
+
