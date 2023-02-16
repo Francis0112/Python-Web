@@ -5,6 +5,6 @@
     {% comment %} {{ items }} {% endcomment %}
     <h3>Cars:</h3>
     {% for i in items %}
-        <p>{{ i.brand }} - {{ i.drive }} - {{ i.fuel }} - {{ i.mileage }} - {{ i.owner }} - {{ i.active }}</p>
+        <p>{{ i.id }} {{ i.brand }} - {{ i.drive }} - {{ i.fuel }} - {{ i.mileage }} - {{ i.owner }} - {{ i.active }}</p>
     {% endfor %}
 {% endblock content %}
