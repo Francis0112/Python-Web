@@ -2,17 +2,17 @@
 
 {% block content %}
 
-	<div class="shadow p-3 mb-10 bg-body-tertiary">
-		<div class="container-fluid">
-			<div class="text-dark-emphasis">
-				<div class="mb-3">
-					<form method="POST"> {% csrf_token %}
-							{{ form.as_p }}
-						<button type="submit"  name="Save" class="btn btn-primary">Submit</button>
-					</form>
+		<div class="shadow p-3 mb-10 bg-body-tertiary">
+			<div class="container-fluid">
+				<div class="text-dark-emphasis">
+					<div class="mb-3">
+						<form method="POST"> {% csrf_token %}
+								{{ form.as_p }}
+							<button type="submit"  name="Save" class="btn btn-primary">Submit</button>
+						</form>
+					</div> 
 				</div> 
-			</div> 
+			</div>
 		</div>
-	</div>
     
 {% endblock  %}
