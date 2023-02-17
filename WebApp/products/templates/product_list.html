@@ -3,7 +3,25 @@
 {% block content %}
     {% comment %} {{ items }} {% endcomment %}
     <h3>Products:</h3>
+        <table class="table table-hover table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Desc</th>
+                <th>Price</th>
+                <th>Avail</th>
+                <th>summary</th>
+            </tr>
     {% for i in items %}
-        <p> {{ i.id }} {{ i.name }} - {{ i.desc }} - {{ i.price }} - {{ i.avail }} - {{ i.summery }}</p>
+            <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.desc }}</td>
+                <td>{{ i.price }}</td>
+                <td>{{ i.avail }}</td>
+                <td>{{ i.summary }}</td>
+            </tr>
+        <!-- <p> {{ i.id }} {{ i.name }} - {{ i.desc }} - {{ i.price }} - {{ i.avail }} - {{ i.summery }}</p> -->
     {% endfor %}
+        </table>
 {% endblock content %}

@@ -4,7 +4,27 @@
 {% block content %}
     {% comment %} {{ items }} {% endcomment %}
     <h3>Cars:</h3>
+        <table class="table table-hover table-dark">
+            <tr>
+                <th>Car ID</th>
+                <th>Car Brand</th>
+                <th>Car Drive</th>
+                <th>Car Fuel</th>
+                <th>Car Mileage</th>
+                <th>Car Owner</th>
+                <th>Car Active</th>
+        </tr>
     {% for i in items %}
-        <p>{{ i.id }} {{ i.brand }} - {{ i.drive }} - {{ i.fuel }} - {{ i.mileage }} - {{ i.owner }} - {{ i.active }}</p>
+            <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.brand }}</td>
+                <td>{{ i.drive }}</td>
+                <td>{{ i.fuel }}</td>
+                <td>{{ i.mileage }}</td>
+                <td>{{ i.owner }}</td>
+                <td>{{ i.active }}</td>
+            </tr>
+        <!-- <p>{{ i.id }} {{ i.brand }} - {{ i.drive }} - {{ i.fuel }} - {{ i.mileage }} - {{ i.owner }} - {{ i.active }}</p> -->
     {% endfor %}
+        </table>
 {% endblock content %}

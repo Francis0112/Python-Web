@@ -7,7 +7,7 @@ class Products(models.Model):
     desc = models.TextField(blank=True, null=True, max_length=40)
     price = models.DecimalField(decimal_places=2, max_digits=1000000)
     avail = models.BooleanField(default=False)
-    summary = models.TextField(default="summary...")
+    summary = models.TextField(max_length=40, default="summary...")
 
 
 class Cars(models.Model):

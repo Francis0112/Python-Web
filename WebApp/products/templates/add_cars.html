@@ -1,10 +1,18 @@
 {% extends "bork.html" %}
 
 {% block content %}
-    
-	<form method="POST"> {% csrf_token %}
-		{{ form.as_p }}
-		<input type="submit" name="" value="Save">
-	</form>
+	
+	<div class="shadow p-3 mb-10 bg-body-tertiary rounded">
+		<div class="container-fluid">
+			<div class="text-dark-emphasis">
+				<div class="mb-3">
+					<form method="POST"> {% csrf_token %}
+							{{ form.as_p }}
+						<button type="submit"  name="Save" class="btn btn-primary">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
 {% endblock content %}
