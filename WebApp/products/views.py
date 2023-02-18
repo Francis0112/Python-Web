@@ -152,3 +152,11 @@ def display_cars(request):
         "items":item
     }
     return render(request, "car_list.html", res)
+
+
+def get_values(request):
+    print(request.GET)
+    res = {
+        'x': request.GET
+    }
+    return render(request, "input_values.html", res)

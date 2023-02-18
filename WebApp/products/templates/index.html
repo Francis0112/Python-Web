@@ -1,6 +1,8 @@
 {% extends "bork.html" %}
 
+{% load static %}
 {% block content  %}
-    <p>onegai shi musi</p>
-    {{ name }}
+    <h3>Django Website By <br> {{ name }}</h3>
+    <br>
+    <img src="{% static 'img/webdev.gif'%}" id="catwebdev" alt="" srcset="">
 {% endblock  %}

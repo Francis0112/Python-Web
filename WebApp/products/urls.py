@@ -17,6 +17,6 @@ urlpatterns = [
     path("display_cars/", views.display_cars),
     path("delete_car/<int:car_id>/", views.delete_car),
     path("delete_product/<int:prod_id>/", views.delete_product),
-    path("message/", views.msg)
+    path("message/", views.msg),
+    path("get_values", views.get_values)
 ]
-

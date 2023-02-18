@@ -1,15 +1,15 @@
 {% extends "bork.html" %}
 
 {% block content %}
-<p>pizza</p>
-<p>{{ name }}</p>
-<h4>Pets List:</h4>
-<ul>
+<p class="ptag">pizza page</p>
+<p class="ptag">{{ name }}</p>
+<h2 class="petlist">Pets List:</h2>
+<ul class="ultag">
 	{% for i in pets %}
 		{% if "memengcat" in i %}
-		    <li>{{ forloop.counter }} - {{ i|add:" CAT" }}</li>
+		    <li class="litag">{{ forloop.counter }} - {{ i|add:" CAT" }}</li>
 		{% else %}
-			<li>{{ forloop.counter }} - {{ i }}</li>
+			<li class="litag">{{ forloop.counter }} - {{ i }}</li>
 		{% endif %}
 	{% endfor %}
 </ul>
@@ -18,4 +18,3 @@
 <br>
 {{ fav_pet }}
 {% endblock  %}
-

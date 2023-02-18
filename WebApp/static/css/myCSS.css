@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(70, 74, 78);
+}
+
+#btn1 {
+    background-color: rgb(0, 255, 234);
+    color: black;
+}
+
+#btn1:hover {
+    background-color: rgb(0, 245, 12);
+} 
+
+#txtbox1 {
+    border: none;
+    background-color: #ffffff;
+    border-bottom: 2px solid #02f7f7ea;
+    color: black;
+    outline: none;
+    font-size: x-large;
+}
+
+.asp {
+    color: #0f1818ea;
+    font-size: larger;
+    font-family: monospace;
+    font-style: oblique;
+}
+
+h3 {
+    color: white;
+    text-align: center;
+}
+
+.ptag {
+    color: white;
+    text-align: center;
+}
+
+.petlist {
+    color: white;
+}
+
+.ultag, .litag {
+    color: white;
+}
+
+#catwebdev {
+    max-width: 100;
+    height: auto;
+}
