@@ -1,13 +1,15 @@
 
 {% extends "bork.html" %}
 
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/myCSS.css' %}">
 {% block content %}
 
     <form action="" method="get"> {% csrf_token %}
-        <label for="username">username:</label>
+        <label class="labeltag" for="username">username:</label>
         <input type="text" id="username" name="username">
         <br>
-        <label for="password">password:</label>
+        <label class="labeltag" for="password">password:</label>
         <input type="password" id="password" name="password">
         <br>
         <button type="submit" value="Save" id="login_btn">Submit</button>
