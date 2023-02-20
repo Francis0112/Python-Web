@@ -20,6 +20,15 @@ body {
     font-size: x-large;
 }
 
+#txtbox2 {
+    border: none;
+    background-color: rgb(70, 74, 78);
+    border-bottom: 2px solid #02f7f7ea;
+    color: white;
+    outline: none;
+    font-size: x-large;
+}
+
 .asp {
     color: #0f1818ea;
     font-size: larger;

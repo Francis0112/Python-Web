@@ -1,0 +1,18 @@
+
+{% extends "bork.html" %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/myCSS.css'%}">
+{% block content %}
+    <div class="labeltag">
+        <form action="" method="POST"> {% csrf_token %}
+                {{ form.as_p }}
+            <input type="Submit" class="btn btn" id="btn1" value="Sumbit" name="Sumbit">
+        </form>
+        <br>
+        <p class="ptag">Radius: {{ circle_value }}</p>
+        <br>
+        <p class="ptag">Area: {{ area }}</p>
+    </div>
+
+{% endblock content %}

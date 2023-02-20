@@ -13,6 +13,8 @@
                 <th>Car Mileage</th>
                 <th>Car Owner</th>
                 <th>Car Active</th>
+                <th>Delete Car</th>
+                <th>Update Car</th>
         </tr>
     {% for i in items %}
             <tr>
@@ -23,6 +25,8 @@
                 <td>{{ i.mileage }}</td>
                 <td>{{ i.owner }}</td>
                 <td>{{ i.active }}</td>
+                <td><a href="http://localhost:8000/products/delete_car/{{ i.id }}">Delete</a></td>
+                <td><a href="http://localhost:8000/products/view_cars/{{ i.id }}">View</a></td>
             </tr>
         <!-- <p>{{ i.id }} {{ i.brand }} - {{ i.drive }} - {{ i.fuel }} - {{ i.mileage }} - {{ i.owner }} - {{ i.active }}</p> -->
     {% endfor %}

@@ -11,6 +11,8 @@
                 <th>Price</th>
                 <th>Avail</th>
                 <th>summary</th>
+                <th>Delete Product</th>
+                <th>View Products</th>
             </tr>
     {% for i in items %}
             <tr>
@@ -20,6 +22,8 @@
                 <td>{{ i.price }}</td>
                 <td>{{ i.avail }}</td>
                 <td>{{ i.summary }}</td>
+                <td><a href="http://localhost:8000/products/delete_product/{{ i.id }}">Delete</a></td>
+                <td><a href="http://localhost:8000/products/view_products/{{ i.id }}">View</a></td>
             </tr>
         <!-- <p> {{ i.id }} {{ i.name }} - {{ i.desc }} - {{ i.price }} - {{ i.avail }} - {{ i.summery }}</p> -->
     {% endfor %}

@@ -23,3 +23,6 @@ class CarsForms(forms.ModelForm):
 	class Meta:
 		model = Cars
 		fields= '__all__'
+
+class CircleForm(forms.Form):
+	radius = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'id':'txtbox2'}))

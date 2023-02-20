@@ -4,9 +4,13 @@ from . models import Products
 from . models import Cars
 from . forms import ProductsForms
 from . forms import CarsForms
+from . forms import CircleForm
+import math
+import requests
 
 
 # Create your views here.
+# home view
 def wakaru(request):
     res = {
         "name":"francis dequito"
@@ -15,7 +19,7 @@ def wakaru(request):
 
 
 def about(request):
-    res  ={
+    res  = {
         "about":"This Django Web App is created by Francis Dequito as part of his Portfolio.",
         "goal":"WORK AT NASA",
         "objective":"FIND ALIENS",
@@ -133,12 +137,6 @@ def msg(request):
     return render(request, "product/message.html", res)
 
 
-def search(request):
-    print(request.get["title"])
-    print(request.POST)
-    return render(request, "search.html", {})
-
-
 def display_products(request):
     item = Products.objects.all()
     res= {
@@ -160,3 +158,42 @@ def get_values(request):
         'x': request.GET
     }
     return render(request, "input_values.html", res)
+
+
+def circle_area(request):
+    form = CircleForm(request.POST or None)
+    circle_value = ""
+    area= 0
+    if form.is_valid():
+        circle_value = form.cleaned_data.get("radius")
+        area = math.pi*int(circle_value)*int(circle_value)
+    res = {
+        "form":form,
+        "circle_value":circle_value,
+        "area": float(area)
+    }
+    return render(request, "circle.html", res)
+
+
+# my django web api calls. rock and roll to the world.
+def web_api(request):
+    response = requests.get('https://jsonplaceholder.typicode.com/users')
+    res = {
+        "response":response.json()
+    }
+    return render(request, "web_api.html", res)
+
+
+def weather_api(request):
+    data = requests.get("https://api.open-meteo.com/v1/forecast?latitude=14.23&longitude=120.97&hourly=temperature_2m,apparent_temperature,rain,showers,weathercode,visibility,windspeed_10m,soil_temperature_0cm")
+    res = {
+        "data":data.json()
+    }
+    return render(request, "weather_api.html", res)
+
+def air_quality_api(request):
+    data = requests.get("https://air-quality-api.open-meteo.com/v1/air-quality?latitude=14.23&longitude=120.97&hourly=carbon_monoxide,nitrogen_dioxide,sulphur_dioxide,aerosol_optical_depth,dust,ammonia&domains=cams_global&timezone=Asia%2FSingapore")
+    res = {
+        "data":data.json()
+    }
+    return render(request, "air_quality.html", res)

@@ -7,12 +7,13 @@
 
     <form action="" method="get"> {% csrf_token %}
         <label class="labeltag" for="username">username:</label>
-        <input type="text" id="username" name="username">
+        <input type="text" id="txtbox2" name="username">
         <br>
         <label class="labeltag" for="password">password:</label>
-        <input type="password" id="password" name="password">
+        <input type="password" id="txtbox2" name="password">
         <br>
-        <button type="submit" value="Save" id="login_btn">Submit</button>
+        <br>
+        <button class="btn btn" type="submit" value="Save" id="btn1">Submit</button>
         <h3>check server for login details</h3>
         <p class="ptag">{{ x }}</p>
 

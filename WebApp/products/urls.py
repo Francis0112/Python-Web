@@ -10,7 +10,6 @@ urlpatterns = [
     path('pizza/', views.pizza),
     path("view_products/<int:prod_id>/", views.view_product_details),
     path("add_product/", views.add_product),
-    path("search/", views.search),
     path("add_cars/", views.add_cars),
     path("view_cars/<int:car_id>/", views.view_car_details),
     path("display_products/", views.display_products),
@@ -18,5 +17,9 @@ urlpatterns = [
     path("delete_car/<int:car_id>/", views.delete_car),
     path("delete_product/<int:prod_id>/", views.delete_product),
     path("message/", views.msg),
-    path("get_values", views.get_values)
+    path("get_values", views.get_values),
+    path("web_api", views.web_api),
+    path("weather_api", views.weather_api),
+    path("circle_area", views.circle_area),
+    path("air_quality_api", views.air_quality_api)
 ]
