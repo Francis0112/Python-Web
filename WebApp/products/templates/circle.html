@@ -4,6 +4,7 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/myCSS.css'%}">
 {% block content %}
+    <h3>Find Area of the Circle:</h3>
     <div class="labeltag">
         <form action="" method="POST"> {% csrf_token %}
                 {{ form.as_p }}
@@ -14,5 +15,4 @@
         <br>
         <p class="ptag">Area: {{ area }}</p>
     </div>
-
 {% endblock content %}

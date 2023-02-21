@@ -21,5 +21,6 @@ urlpatterns = [
     path("web_api", views.web_api),
     path("weather_api", views.weather_api),
     path("circle_area", views.circle_area),
-    path("air_quality_api", views.air_quality_api)
+    path("air_quality_api", views.air_quality_api),
+    path("geocoding_api", views.geocoding_api)
 ]

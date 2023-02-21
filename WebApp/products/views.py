@@ -197,3 +197,11 @@ def air_quality_api(request):
         "data":data.json()
     }
     return render(request, "air_quality.html", res)
+
+
+def geocoding_api(request):
+    data = requests.get("https://geocoding-api.open-meteo.com/v1/search?name=manila&count=1")
+    res = {
+        "data":data.json()
+    }
+    return render(request, "geocoding_api.html", res)
