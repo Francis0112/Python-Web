@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from . models import Products
 from . models import Cars
 from . forms import ProductsForms
@@ -76,16 +76,32 @@ def view_car_details(request, car_id):
     try:
         item = Cars.objects.get(id=car_id)
         res = {
-        "brand":item.brand,
-        "drive":item.drive,
-        "fuel":item.fuel,
-        "mileage":item.mileage,
-        "owner":item.owner,
-        "active":item.active
+            "item":item
         }
     except Cars.DoesNotExist:
         raise Http404
     return render(request, "car_details.html", res)
+
+
+def update_car(request, car_id):
+    car = Cars.objects.get(id=car_id)
+    brand = request.POST['brand']
+    drive = request.POST['drive']
+    fuel = request.POST['fuel']
+    mileage = request.POST['mileage']
+    owner = request.POST['owner']
+    active = request.POST['active']
+    car.brand = brand
+    car.drive = drive
+    car.fuel = fuel
+    car.mileage = mileage
+    car.owner = owner
+    car.active = active
+    car.save()
+    return HttpResponseRedirect(reversed("car_list"))
+
+def update_product(request):
+    return render(request, "", {})
 
 
 def add_product(request):

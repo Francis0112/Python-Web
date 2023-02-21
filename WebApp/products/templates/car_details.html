@@ -1,12 +1,31 @@
 {% extends "bork.html" %}
 
-
+{% load static %}
+<link rel="stylesheet" type="text/css"  href="{% static 'css/MyCSS.css' %}">
 {% block content %}
-    <h3>Car: </h3>
-    <p>Brand: <b>{{ brand }}</b></p>
-    <p>Drive: <b>{{ drive }}</b></p>
-    <p>Fuel: <b>{{ fuel }}</b></p>
-    <p>Mileage: <b>{{ mileage }}</b></p>
-    <p>Owner: <b>{{ owner }}</b></p>
-    <p>Active: <b>{{ active }}</b></p>
+    <h3>Update Car: </h3>
+    
+    <form action="update_car/{{ item.id }}" method="post"> 
+        {% csrf_token %}
+        <label class="labeltag" for="brand">Brand:</label>
+        <input name="brand" type="text" value="{{ item.brand }}" id="txtbox2">
+        <br>
+        <label class="labeltag" for="brand">Drive:</label>
+        <input name="drive" type="text" value="{{ item.drive }}" id="txtbox2">
+        <br>
+        <label class="labeltag" for="brand">Fuel:</label>
+        <input name="fuel" type="text" value="{{ item.fuel }}" id="txtbox2">
+        <br>
+        <label class="labeltag" for="brand">Mileage:</label>
+        <input name="mileage" type="text" value="{{ item.mileage }}" id="txtbox2">
+        <br>
+        <label class="labeltag" for="brand">Owner:</label>
+        <input name="owner" type="text" value="{{ item.owner }}" id="txtbox2">
+        <br>
+        <label class="labeltag" for="brand">Active:</label>
+        <input name="active" type="text" value="{{ item.active }}" id="txtbox2">
+        <br>
+        <input type="submit" value="Submit" name="" id="btn1" class="btn btn">
+    </form>
+
 {% endblock content %}  
